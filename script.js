@@ -82,63 +82,61 @@ Product_details = [
 ];
 
 Cart = [];
-  function Cartisclicked(id) {
-    alert("Product added to cart");
-    Cart.append(id);
-  }
-  Product_page = [];
-  function productpageisclicked(id) {
-    Product_page.append(id);
-  }
-  //Product page
-  localStorage.setItem("Product_page", JSON.stringify(Product_page));
-  localStorage.setItem("Cart_products", JSON.stringify(Cart));
-  localStorage.setItem("Product_Image", JSON.stringify(Product_details));
-  $(document).ready(function () {
-    // Retrieve image data from localStorage 
-    const imageData = JSON.parse(localStorage.getItem("Product_Image")) || [];
-    //   console.log(imageData);
-    //   // Dynamically populate Slick slider with image data
-    //   const slickSlider = $("#dynamic-slider");
-    //   imageData.forEach((image) => {
-    //     slickSlider.append(
-    //       `<div><img src="${image.Path}" alt="${image.alt}">
-    //           <p>${image.Description} <br>  ${image.Price}</p></div>`
-    //     );
-    //   });
-    //   // Initialize Slick carousel with center mode
-    //   slickSlider.slick({
-    //     centerMode: false,
-    //     slidesToShow: 3, // Number of slides to show
-    //     infinite: true,
-    //   });
-    var carousel = $("#imageCarousel");
-    // Add images to the carousel
-    imageData.forEach((image) => {
-      carousel.append(
-        `<div><img src="${image.Path}" alt="${image.alt}"></div>`
-      );
-    });
-    // Initialize Slick Carousel
-    carousel.slick({
-      infinite: true,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      rows: 2,
-      arrows: false,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            rows: 1,
-          },
-        },
-      ],
-    });
+function Cartisclicked(id) {
+  alert("Product added to cart");
+  Cart.append(id);
+}
+Product_page = [];
+function productpageisclicked(id) {
+  Product_page.append(id);
+}
+//Product page
+localStorage.setItem("Product_page", JSON.stringify(Product_page));
+localStorage.setItem("Cart_products", JSON.stringify(Cart));
+localStorage.setItem("Product_Image", JSON.stringify(Product_details));
+$(document).ready(function () {
+  // Retrieve image data from localStorage
+  const imageData = JSON.parse(localStorage.getItem("Product_Image")) || [];
+  //   console.log(imageData);
+  //   // Dynamically populate Slick slider with image data
+  //   const slickSlider = $("#dynamic-slider");
+  //   imageData.forEach((image) => {
+  //     slickSlider.append(
+  //       `<div><img src="${image.Path}" alt="${image.alt}">
+  //           <p>${image.Description} <br>  ${image.Price}</p></div>`
+  //     );
+  //   });
+  //   // Initialize Slick carousel with center mode
+  //   slickSlider.slick({
+  //     centerMode: false,
+  //     slidesToShow: 3, // Number of slides to show
+  //     infinite: true,
+  //   });
+  var carousel = $("#imageCarousel");
+  // Add images to the carousel
+  imageData.forEach((image) => {
+    carousel.append(
+      `<div><img src="${image.Path}" alt="${image.alt}"></div>`
+    );
   });
-
-
-
-
+  // Initialize Slick Carousel
+  carousel.slick({
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    rows: 2,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          rows: 1,
+          centerPadding: "50px",
+          centerMode: true,
+        },
+      },
+    ],
+  });
+});
