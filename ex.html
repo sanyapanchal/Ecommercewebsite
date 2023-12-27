@@ -65,6 +65,20 @@
         </div>
       </div>
     </div>
+
+
+    <div class="container-fluid my-5">
+      <div class="container">
+        <div class="carousal-container">
+          <img  onclick="$('.carousel').slick('slickPrev')" src="/images/Fill With Left Arrow.png" alt="img" class="img-fluid">
+
+          <img  onclick="$('.carousel').slick('slickNext')" src="/images/Fill with Right Arrow.png" alt="img">
+
+        <div class="carousel my-3" id="imageCarousel"></div>
+      </div>
+      </div>
+
+    </div>
   </body>
 </html>
 
@@ -168,21 +182,27 @@
   $(document).ready(function () {
     // Retrieve image data from localStorage 
     const imageData = JSON.parse(localStorage.getItem("Product_Image")) || [];
-    //   console.log(imageData);
-    //   // Dynamically populate Slick slider with image data
-    //   const slickSlider = $("#dynamic-slider");
-    //   imageData.forEach((image) => {
-    //     slickSlider.append(
-    //       `<div><img src="${image.Path}" alt="${image.alt}">
-    //           <p>${image.Description} <br>  ${image.Price}</p></div>`
-    //     );
-    //   });
-    //   // Initialize Slick carousel with center mode
-    //   slickSlider.slick({
-    //     centerMode: false,
-    //     slidesToShow: 3, // Number of slides to show
-    //     infinite: true,
-    //   });
+      console.log(imageData);
+      // Dynamically populate Slick slider with image data
+      const slickSlider = $("#dynamic-slider");
+      imageData.forEach((image) => {
+        slickSlider.append(
+          `<div><img src="${image.Path}" alt="${image.alt}">
+              <p>${image.Description} <br>  ${image.Price}</p></div>`
+        );
+      });
+      // Initialize Slick carousel with center mode
+      slickSlider.slick({
+        centerMode: false,
+        slidesToShow: 3, // Number of slides to show
+        infinite: true,
+      });
+
+
+
+
+
+
     var carousel = $("#imageCarousel");
     // Add images to the carousel
     imageData.forEach((image) => {
@@ -211,4 +231,4 @@
   });
 </script>
 
-<!-- <p>${image.Description} <br>  ${image.Price}</p> -->
+

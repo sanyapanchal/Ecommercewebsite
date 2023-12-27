@@ -140,3 +140,69 @@ $(document).ready(function () {
     ],
   });
 });
+
+
+// js for clock
+function updateClock() {
+  const now = new Date();
+  const days = now.getDay().toString().padStart(2, '0');
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+
+  const clockElement = document.getElementById('clock');
+  clockElement.textContent = `${days} : ${hours} : ${minutes} : ${seconds}`;
+}
+
+function startClock() {
+  updateClock();
+  setInterval(updateClock, 1000);
+}
+
+document.addEventListener('DOMContentLoaded', startClock);
+
+
+
+
+
+
+
+// top to scroll button
+window.onscroll = function() {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      scrollToTopBtn.style.display = "block";
+  } else {
+      scrollToTopBtn.style.display = "none";
+  }
+}
+
+// Scroll to the top of the page
+function scrollToTop() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+}
+
+
+// maincaurosal
+$(document).ready(function () {
+  $(".slick-slider").slick({
+    centerMode: true,
+    slidesToShow: 4,
+    infinite: true,
+    arrows:false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
+  });
+});
