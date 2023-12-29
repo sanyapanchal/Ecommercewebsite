@@ -70,10 +70,20 @@
         }
 
         .digital-clock {
-          font-size: 2rem;
+          font-size: 1rem;
           color: #333;
           font-weight: bold;
         }
+
+        .main {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+
+        } 
+
+
+
         .totop{
           display: flex;
           justify-content: right;
@@ -121,3 +131,23 @@
         height: 90%;
         width: 80%;
       }
+
+
+
+  /* card css */
+  .GameCard {
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+  }
+
+  .AddButton {
+    visibility: hidden;
+  }
+
+  .GameCard:hover .AddButton {
+    visibility: visible;
+  }
+
+  .product_space{
+    margin-bottom:0.25rem ;
+  }
