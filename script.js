@@ -313,43 +313,37 @@ function redirectToCart(event) {
 }
 
 function additem_toCart(id) {
-  const index = My_product.findIndex(product => product.id == id);
-  Product_cart.push(My_product[index])
+  const index = My_product.findIndex((product) => product.id == id);
+  Product_cart.push(My_product[index]);
   localStorage.setItem("Product_Cart", JSON.stringify(Product_cart));
   // console.log(id)
-  console.log(Product_cart)
+  console.log(Product_cart);
 }
 
 const addToCartButtons = document.querySelectorAll(".addtocart");
 
 addToCartButtons.forEach(function (addToCartButton) {
   addToCartButton.onclick = function (event) {
-      additem_toCart(event.target.id);
-      redirectToCart();
+    additem_toCart(event.target.id);
+    redirectToCart();
   };
 });
 
 // delete functionality
 function remove_toCart(id) {
-
   // console.log(id)
-  console.log(Product_cart)
+  console.log(Product_cart);
 }
 
 const removeToCartButtons = document.querySelectorAll(".removeitem");
-console.log(removeToCartButtons)
+console.log(removeToCartButtons);
 
 removeToCartButtons.forEach(function (removeToCartButton) {
   removeToCartButton.onclick = function (event) {
-      remove_toCart(event.target.id);
-      console.log(event.target.id)
+    remove_toCart(event.target.id);
+    console.log(event.target.id);
   };
 });
-
-
-
-
-
 
 // function to go to product detailed page
 function redirectToDetailPage() {
@@ -364,11 +358,11 @@ function redirectToViewPage() {
 // cart products
 // const Product_cart = [
 
-  // {
-  //   id: 1,
-  //   title: "game",
-  //   price: 120,
-  //   discount: 5,
-  //   path: "/images/img0 (2).png",
-  // },
+// {
+//   id: 1,
+//   title: "game",
+//   price: 120,
+//   discount: 5,
+//   path: "/images/img0 (2).png",
+// },
 // ];

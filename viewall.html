@@ -34,7 +34,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <style>
+       .product-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
 
+       
     </style>
 </head>
 <body>
@@ -44,17 +50,20 @@
                 <span style="color: #DB4444; font-size:50px;">Our Products</span>
             </div>
     
-            <!-- Repeat this section 4 times -->
+       
             <div class="slick-slider" id="dynamic-slider"></div>
-            <!-- End of repeated section -->
+          
             <div class="btn btn-danger my-3" onclick="redirectToHome()"> Back To Home </div>
         </div>
     </div>
-</body>
+  </body>
+
+  
 <script src="script.js"></script>
 <script>
    function redirectToHome() {
     window.location.href = "index.html";
   }
-</script>
+
+</script> 
 </html>
